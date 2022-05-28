@@ -78,7 +78,7 @@ public class InputParser {
         } else if ("attack".equals(selectedItem)) {
             if (enemy == null) {
                 result[0] = "fail";
-                result[1] = "请选择需要攻击的敌人";
+                result[1] = "please choose a enemy !!";
             } else {
                 result[0] = "success";
                 int attack = hero.attack(enemy);
@@ -135,8 +135,8 @@ public class InputParser {
         } else {
             //The enemy gets a random hero to attack
             Hero hero = game.getHeroes().stream().filter(h -> h.getLifePoints() > 0).findAny().get();
-            int armor = hero.getDefend() + hero.getArmor();//英雄盔甲防御
-            int hurt = Math.max(enemy.getWeaponDamage() - armor, 0);//造成的伤害
+            int armor = hero.getDefend() + hero.getArmor();
+            int hurt = Math.max(enemy.getWeaponDamage() - armor, 0);//attect
             hero.setLifePoints(hero.getLifePoints() - hurt);
             if (hero.getLifePoints() <= 0) {
                 game.getDeadHeroTurn().add(hero);
