@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="700.0" spacing="10.0" style="-fx-background-image: url(file:src/bg.png);" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isep.GameController">
+   <children>
+      <Label text="Information" />
+      <ListView fx:id="infos" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+      <FlowPane alignment="CENTER" hgap="20.0" prefHeight="0.0" prefWidth="600.0">
+         <children>
+            <Label text="The number of heroes in battle：" />
+            <ComboBox fx:id="c_num" prefWidth="150.0" />
+         </children>
+      </FlowPane>
+      <FlowPane alignment="CENTER" hgap="20.0" prefHeight="5.0" prefWidth="600.0">
+         <children>
+            <Label text="Click to add a Hero：" />
+            <Button mnemonicParsing="false" onAction="#addHero" style="-fx-background-color: #eeddff;" text="Mage" />
+            <Button mnemonicParsing="false" onAction="#addHero" style="-fx-background-color: #eeddff;" text="Healer" />
+            <Button mnemonicParsing="false" onAction="#addHero" style="-fx-background-color: #eeddff;" text="Hunter" />
+            <Button mnemonicParsing="false" onAction="#addHero" style="-fx-background-color: #eeddff;" text="Warrior" />
+         </children>
+      </FlowPane>
+      <FlowPane alignment="CENTER">
+         <children>
+            <Button fx:id="start" mnemonicParsing="false" onAction="#start" prefHeight="23.0" prefWidth="159.0" text="Start the game" />
+         </children>
+      </FlowPane>
+      <Label fx:id="playTurn" text="The first round" />
+      <HBox alignment="CENTER" prefHeight="127.0" prefWidth="600.0" spacing="30.0">
+         <children>
+            <TitledPane collapsible="false" text="Hero">
+               <content>
+                  <VBox fx:id="vb_heros" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" />
+               </content>
+            </TitledPane>
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Choose one HERO to react" />
+                  <ComboBox fx:id="c_target" prefWidth="150.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="127.0" prefWidth="72.0">
+               <children>
+                  <Button fx:id="ok" mnemonicParsing="false" onAction="#ok" prefHeight="40.0" prefWidth="40.0" text="action" />
+               </children>
+            </VBox>
+            <TitledPane collapsible="false" text="Enemy">
+               <content>
+                  <VBox fx:id="vb_enemy" alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="5.0" />
+               </content>
+            </TitledPane>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+</VBox>
